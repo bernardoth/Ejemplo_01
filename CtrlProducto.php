@@ -27,7 +27,7 @@ var_dump($_POST);
 
              }
              else {
-                 echo "Algo esta Mal";
+                 echo "Es todo amigos.";
 
              }
          }
@@ -38,5 +38,5 @@ var_dump($_POST);
         echo "no se sabe que contiene";
          break;
  }
- echo "el fin";
+ 
 ?>
