@@ -37,6 +37,7 @@ $listaProd=ProductoDb::Listado(new Mysql());
               <div class="dropdown-menu" aria-labelledby="dropdownId">
                 <a class="dropdown-item" href="formInsercion.html">Insertar Producto</a>
                 <a class="dropdown-item" href="#">Listar Producto</a>
+                <a class="dropdown-item" href="AdmProd.php">Adminitrar Productos</a>
               </div>
             </li>
           </ul>

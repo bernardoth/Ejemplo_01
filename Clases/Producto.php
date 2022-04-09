@@ -4,12 +4,13 @@ class Producto
 {
     private $idProducto,$nombre,$imagen,$precio,$stock;
     
-    public function __construct($nombre,$imagen,$precio,$stock){
+    public function __construct($nombre,$imagen,$precio,$stock,$idProducto=null){
         
-        $this->nombre=$nombre;
-        $this->imagen=$imagen;
-        $this->precio=$precio;
-        $this->stock=$stock;
+        $this->nombre = $nombre;
+        $this->imagen = $imagen;
+        $this->precio = $precio;
+        $this->stock = $stock;
+        $this->idProducto = $idProducto;
 
     }
     

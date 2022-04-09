@@ -36,7 +36,8 @@ $listaProd=ProductoDb::Listado(new Mysql());
               <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi CRUD</a>
               <div class="dropdown-menu" aria-labelledby="dropdownId">
                 <a class="dropdown-item" href="formInsercion.html">Insertar Producto</a>
-                <a class="dropdown-item" href="#">Listar Producto</a>
+                <a class="dropdown-item" href="listarProductos.php">Listar Producto</a>
+                <a class="dropdown-item" href="AdmProd.php">Adminitrar Productos</a>
               </div>
             </li>
           </ul>
@@ -82,9 +83,9 @@ $listaProd=ProductoDb::Listado(new Mysql());
                   <a name="" id="" class="btn btn-warning" href="formModProd.php?id=<?=$x->getIdProducto()?>" role="button">Modificar</a>
                 </td>
                 <td>
-                  <form action="CrtlProducto.php" method="post">
+                  <form action="CtrlProducto.php" method="post">
                     <input type="hidden" name="idProducto" value="<?=$x->getIdProducto()?>">
-                    <button type="button" class="btn btn-primary" name="btn" value="Eliminar">Eliminar</button>
+                    <button type="submit" class="btn btn-primary" name="btn" value="Eliminar">Eliminar</button>
                   </form>
 
                 </td>

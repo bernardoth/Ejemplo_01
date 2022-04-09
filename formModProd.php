@@ -1,7 +1,7 @@
 <?php 
 
 require_once('autoload.php');
-$prod = ProductoDb::BuscarPorId(new Mysql(),$_GET["id"]);
+$prod = ProductoDb::buscarPorId(new Mysql(),$_GET["id"]);
 //var_dump($listaProd);
 ?>
 <!doctype html>
@@ -37,6 +37,7 @@ $prod = ProductoDb::BuscarPorId(new Mysql(),$_GET["id"]);
               <div class="dropdown-menu" aria-labelledby="dropdownId">
                 <a class="dropdown-item" href="formInsercion.html">Insertar Producto</a>
                 <a class="dropdown-item" href="listarProductos.php">Listar Producto</a>
+                <a class="dropdown-item" href="AdmProd.php">Adminitrar Productos</a>
               </div>
             </li>
           </ul>
@@ -59,28 +60,33 @@ $prod = ProductoDb::BuscarPorId(new Mysql(),$_GET["id"]);
                 <form action="CtrlProducto.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="AyudaNombre">
+                        <input type="text" class="form-control" name="nombre" id="nombre" value="<?=$prod->getNombre()?>" aria-describedby="AyudaNombre">
                         <div id="AyudaNombre"  class="for-text">Ingrese Nombre</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Precio</label>
-                        <input type="number" class="form-control" name="precio" id="precio" aria-describedby="AyudaPrecio">
+                        <input type="number" class="form-control" name="precio" id="precio" value="<?=$prod->getPrecio()?>" aria-describedby="AyudaPrecio">
                         <div id="AyudaPrecio"  class="for-text">Ingrese Precio</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="nombre" class="form-label">Stock</label>
-                        <input type="number" class="form-control" name="stock" id="stock" aria-describedby="AyudaStock">
+                        <input type="number" class="form-control" name="stock" id="stock" value="<?=$prod->getStock()?>" aria-describedby="AyudaStock">
                         <div id="AyudaStock"  class="for-text">Ingrese Stock</div>
                     </div>
 
                     <div class="mb-3">
                         <label for="formFile" class="form-label">Seleccione una imagen</label>
-                        <input type="file" class="form-control" name="imagen"  >
+                        <input type="file" class="form-control" name="imagen"  ><br>
+                        <img src="<?=$prod->getImagen()?>" alt="" width="60px heigth="60px">
                         
+                        <input type="hidden" name="imagenActual" value="<?=$prod->getImagen()?>">
+                        <input type="hidden" name="idProducto" value = "<?=$prod->getIdProducto()?>">
                     </div>
-                    <button type="submit" class="btn btn-primary" value="Insertar" name="btn">Guardar</button>
+                    
+
+                    <button type="submit" class="btn btn-primary" value="Modificar" name="btn">Guardar</button>
 
                 </form>
             </div>
